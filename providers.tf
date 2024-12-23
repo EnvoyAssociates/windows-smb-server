@@ -18,10 +18,10 @@ terraform {
   backend "s3" {}
 }
 
-  default_tags {
-    tags = {
-      "Deployed By"  = "GitHub Actions"
-      "Repo"         = "windows-smb-server"
-      "Terraform"    = "true"
-    }
-  }
+#  default_tags {
+#    tags = {
+#      "Deployed By"  = "GitHub Actions"
+#      "Repo"         = "windows-smb-server"
+#      "Terraform"    = "true"
+#    }
+#  }
