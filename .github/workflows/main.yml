@@ -16,6 +16,9 @@ env:
 jobs:
   deploy_to_production:
     runs-on: ubuntu-latest
+    environment: production1
+    env:
+      ENV: production1
     steps:
       - name: Git checkout
         uses: actions/checkout@v3
