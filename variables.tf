@@ -2,7 +2,7 @@
 variable "account_type" {
   type        = string
   description = "account_type"
-  default = "envoy"
+  default = "envoy-smb"
 }
 
 variable "env" {
