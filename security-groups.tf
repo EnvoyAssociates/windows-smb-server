@@ -52,8 +52,8 @@ module "wireguardvpn_sg" {
     },
   ]
 
-  create_before_destroy = true
-  preserve_security_group_id = true
+#  create_before_destroy = true
+#  preserve_security_group_id = true
 
 }
 
@@ -104,7 +104,7 @@ module "fileserver_sg" {
     },
   ]
 
-  create_before_destroy = true
-  preserve_security_group_id = true
+#  create_before_destroy = true
+#  preserve_security_group_id = true
 
 }
