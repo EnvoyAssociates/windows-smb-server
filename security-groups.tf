@@ -6,7 +6,7 @@ module "wireguard_vpn_sg" {
   source = "cloudposse/security-group/aws"
   version = "2.2.0"
   
-  attributes = ["${var.account_type}-${var.env}", "wireguard-sg"]
+  attributes = ["${var.account_type}-${var.env}", "smb-wireguard-sg"]
   security_group_description = "Wireguard Security Group"
   vpc_id  = module.vpc.vpc_id
   allow_all_egress = true
@@ -102,7 +102,7 @@ module "smb_fileserver_sg" {
   source = "cloudposse/security-group/aws"
   version = "2.2.0"
   
-  attributes = ["${var.account_type}-${var.env}", "smb-sg"]
+  attributes = ["${var.account_type}-${var.env}", "smb-fileserver-sg"]
   security_group_description = "SMB File Server Security Group"
   vpc_id  = module.vpc.vpc_id
   allow_all_egress = true
