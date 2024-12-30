@@ -6,7 +6,7 @@ module "wireguard_vpn_sg" {
   source = "cloudposse/security-group/aws"
   version = "2.2.0"
   
-  attributes = ["${var.account_type}-${var.env}", "smb-wireguard-sg"]
+  attributes = ["${var.account_type}-${var.env}-${var.name}", "wireguard-sg"]
   security_group_description = "Wireguard Security Group"
   vpc_id  = module.vpc.vpc_id
   allow_all_egress = true
@@ -93,16 +93,15 @@ module "wireguard_vpn_sg" {
   preserve_security_group_id = true
 }
 
-
 #########################
 # SMB File Server
 #########################
 
-module "smb_fileserver_sg" {
+module "windows_smb_sg" {
   source = "cloudposse/security-group/aws"
   version = "2.2.0"
   
-  attributes = ["${var.account_type}-${var.env}", "smb-fileserver-sg"]
+  attributes = ["${var.account_type}-${var.env}-${var.name}", "fileserver-sg"]
   security_group_description = "SMB File Server Security Group"
   vpc_id  = module.vpc.vpc_id
   allow_all_egress = true
@@ -127,6 +126,16 @@ module "smb_fileserver_sg" {
       cidr_blocks = ["10.1.0.0/24"]
       self        = null
       description = "SMB from VPC network"
+    },
+    {
+      key         = "rdp_vpc"
+      type        = "ingress"
+      from_port   = 3389
+      to_port     = 3389
+      protocol    = "tcp"
+      cidr_blocks = ["10.1.0.0/24"]
+      self        = null
+      description = "RDP from VPC network"
     }
   ]
 
