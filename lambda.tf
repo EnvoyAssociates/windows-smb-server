@@ -73,6 +73,13 @@ resource "aws_lambda_permission" "ec2_weekend_start" {
   source_arn    = aws_cloudwatch_event_rule.ec2_weekend_start.arn
 }
 
+resource "aws_lambda_permission" "ec2_start_now" {
+  action        = "lambda:InvokeFunction"
+  function_name = module.lambda_ec2_start.function_name
+  principal     = "events.amazonaws.com"
+  source_arn    = aws_cloudwatch_event_rule.ec2_start_now.arn
+}
+
 // EC2 stop
 resource "aws_iam_role_policy" "lambda_ec2_stop" {
   role   = module.lambda_ec2_stop.role_name
@@ -111,4 +118,11 @@ resource "aws_lambda_permission" "ec2_weekend_stop" {
   function_name = module.lambda_ec2_stop.function_name
   principal     = "events.amazonaws.com"
   source_arn    = aws_cloudwatch_event_rule.ec2_weekend_stop.arn
+}
+
+resource "aws_lambda_permission" "ec2_stop_now" {
+  action        = "lambda:InvokeFunction"
+  function_name = module.lambda_ec2_stop.function_name
+  principal     = "events.amazonaws.com"
+  source_arn    = aws_cloudwatch_event_rule.ec2_stop_now.arn
 }
