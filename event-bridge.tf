@@ -1,7 +1,7 @@
 
 locals {
   weekday_start = "cron(0 7 ? * MON-FRI *)"
-  weekday_stop  = "cron(0 10 ? * MON-FRI *)"
+  weekday_stop  = "cron(0 19 ? * MON-FRI *)"
   weekend_start = "cron(0 9 ? * SAT *)"
   weekend_stop  = "cron(0 13 ? * SAT *)"
 }
