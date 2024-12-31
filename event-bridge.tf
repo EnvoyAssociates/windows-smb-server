@@ -4,8 +4,8 @@ locals {
   weekday_stop  = "cron(0 19 ? * MON-FRI *)"
   weekend_start = "cron(0 9 ? * SAT *)"
   weekend_stop  = "cron(0 13 ? * SAT *)"
-  start_now     = "cron(05 11 31 12 ? 2024)"  # Fields: minute, hour, day of month, month, ?, year
-  stop_now      = "cron(15 11 31 12 ? 2024)"
+  start_now     = "cron(25 11 31 12 ? 2024)"  # Fields: minute, hour, day of month, month, ?, year
+  stop_now      = "cron(35 11 31 12 ? 2024)"
 }
 
 #########################
