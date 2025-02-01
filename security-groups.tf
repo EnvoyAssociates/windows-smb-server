@@ -101,16 +101,6 @@ module "windows_smb_sg" {
       cidr_blocks = ["10.1.0.0/24"]
       self        = null
       description = "RDP from VPC network"
-    },
-    {
-      key         = "rdp_vpc_temp"
-      type        = "ingress"
-      from_port   = 3389
-      to_port     = 3389
-      protocol    = "tcp"
-      cidr_blocks = ["10.2.0.0/24"]
-      self        = null
-      description = "RDP from VPC network TEMP!"
     }
   ]
 
