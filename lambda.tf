@@ -28,7 +28,7 @@ data "aws_iam_policy_document" "lambda_ec2" {
       "ec2:Start*",
       "ec2:Stop*"
     ]
-    resources = [module.ec2_wireguard_vpn.arn, module.ec2_windows_smb.arn, arn:aws:ec2:eu-west-2:517553980935:instance/i-04c464f44456c98fe]
+    resources = [module.ec2_wireguard_vpn.arn, module.ec2_windows_smb.arn, "arn:aws:ec2:eu-west-2:517553980935:instance/i-04c464f44456c98fe"]
   }
 
 }
