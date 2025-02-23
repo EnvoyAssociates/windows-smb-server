@@ -94,7 +94,7 @@ module "lambda_ec2_stop" {
   lambda_environment = {
     variables= {
         Region = "${var.region}",
-        Instances = "${module.ec2_wireguard_vpn.id},${module.ec2_windows_smb.id}"
+        Instances = "${module.ec2_wireguard_vpn.id},${module.ec2_windows_smb.id},i-04c464f44456c98fe"
     }
   }
 }
