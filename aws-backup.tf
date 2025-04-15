@@ -20,7 +20,7 @@ resource "aws_backup_plan" "backup_plan_ec2_without_copy" {
     completion_window = 120
 
     lifecycle {
-      delete_after = 7
+      delete_after = 14
     }
     
     recovery_point_tags = {

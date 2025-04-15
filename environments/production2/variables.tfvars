@@ -1,24 +1,24 @@
 region = "eu-west-2"
-account = "517553980935"
+account = "339712908298"
 account_type = "envoy-associates"
-env = "prod1"
+env = "prod2"
 name = "smb"
 
 ## EC2 instances
 // Shared
-ssh_key_pair = "EnvoyAssociatesProd1Key"
+ssh_key_pair = "EnvoyAssociatesProd2Key"
 
 // Wireguard VPN
 wireguard_instance_type = "t3a.micro"
-wireguard_ami = "ami-06daac509a9b90d62"
+wireguard_ami = "ami-06523eeaf4c1ae991"
 
 // Windows SMB File Server
 windows_smb_instance_type = "t3a.medium"
-windows_smb_ami = "ami-0733fe3797ab02f5f"
+windows_smb_ami = "ami-0137a390af578b3e9"
 
 // FTPS Server
 ftps_server_instance_type = "t3.micro"
 ftps_server_ami = "ami-0634f20aa0764d177"
 
 ## AWS Backup
-backup_kms_key_arn = "arn:aws:kms:eu-west-2:517553980935:key/4fed8181-a4e0-4606-af46-32ea922f41d5"
+backup_kms_key_arn = "arn:aws:kms:eu-west-2:339712908298:key/945914c6-dcf1-4ca0-8a2f-ae0d7e4dae28"

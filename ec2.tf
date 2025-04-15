@@ -68,3 +68,35 @@ module "ec2_windows_smb" {
   disable_alarm_action         = true
   tags = {Backup = true}
 }
+
+#########################
+# FTPS Instance
+#########################
+
+module "ec2_ftps" {
+  source = "cloudposse/ec2-instance/aws"
+  version     = "1.6.1"
+  
+  namespace          = var.account_type
+  stage              = var.env
+  name               = "${var.name}-ftps-server"
+  
+  vpc_id                       = module.vpc.vpc_id
+  subnet                       = module.dynamic_subnets.public_subnet_ids[0]
+  security_groups              = [module.ftps_server_sg.id, "sg-0ba034e982b090426"]
+  security_group_enabled       = false
+  associate_public_ip_address  = true
+  ami                          = var.ftps_server_ami
+  ssh_key_pair                 = var.ssh_key_pair
+  instance_type                = var.ftps_server_instance_type
+  private_ip                   = "10.1.0.113"
+  ssm_patch_manager_enabled    = true
+  instance_profile             = ""
+  root_volume_size             = 8
+  root_volume_type             = "gp3"
+  root_iops                    = "3000"
+  root_throughput              = "125"
+  root_block_device_kms_key_id = module.kms_cmk_ebs.key_arn
+  disable_alarm_action         = true
+  tags = {Backup = true}
+}

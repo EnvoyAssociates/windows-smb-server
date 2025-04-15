@@ -16,9 +16,9 @@ env:
 jobs:
   deploy_to_production:
     runs-on: ubuntu-latest
-    environment: production1
+    environment: production2
     env:
-      ENV: production1
+      ENV: production2
     steps:
       - name: Git checkout
         uses: actions/checkout@v3
@@ -48,7 +48,7 @@ jobs:
 
       - name: Terraform Plan
         id: plan
-        run: terraform plan -var-file "environments/production1/variables.tfvars"
+        run: terraform plan -var-file "environments/production2/variables.tfvars"
         if: github.event_name == 'pull_request'
         continue-on-error: true
 
@@ -95,4 +95,4 @@ jobs:
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: terraform apply -var-file "environments/production1/variables.tfvars" -auto-approve -input=false
+        run: terraform apply -var-file "environments/production2/variables.tfvars" -auto-approve -input=false

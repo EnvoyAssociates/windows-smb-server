@@ -53,6 +53,17 @@ variable "windows_smb_ami" {
   description = "EC2 AMI"
 }
 
+// FTPS Server
+variable "ftps_server_instance_type" {
+  type        = string
+  description = "EC2 instance type"
+}
+
+variable "ftps_server_ami" {
+  type        = string
+  description = "EC2 AMI"
+}
+
 ## AWS Backup
 variable "backup_kms_key_arn" {
   type        = string
