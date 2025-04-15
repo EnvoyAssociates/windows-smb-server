@@ -1,9 +1,13 @@
 
 locals {
-  weekday_start = "cron(0 7 ? * MON-FRI *)"
-  weekday_stop  = "cron(0 19 ? * MON-SUN *)"
-  weekend_start = "cron(0 9 ? * SAT *)"
-  weekend_stop  = "cron(0 13 ? * SAT *)"
+  weekday_start = "cron(0 6 ? * MON-FRI *)" // Daylight saving
+  weekday_stop  = "cron(0 18 ? * MON-SUN *)" // Daylight saving
+  weekend_start = "cron(0 8 ? * SAT *)" // Daylight saving
+  weekend_stop  = "cron(0 12 ? * SAT *)" // Daylight saving
+  # weekday_start = "cron(0 7 ? * MON-FRI *)" // Not daylight saving
+  # weekday_stop  = "cron(0 19 ? * MON-SUN *)" // Not daylight saving
+  # weekend_start = "cron(0 9 ? * SAT *)" // Not daylight saving
+  # weekend_stop  = "cron(0 13 ? * SAT *)" // Not daylight saving
 }
 
 #########################
