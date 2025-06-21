@@ -48,7 +48,7 @@ module "wireguard_vpn_sg" {
       from_port   = 22
       to_port     = 22
       protocol    = "tcp"
-      cidr_blocks = ["82.22.173.9/32"]
+      cidr_blocks = ["82.22.173.10/32"] # this is probably out of date! 
       self        = null
       description = "SSH from GR home"
     }
