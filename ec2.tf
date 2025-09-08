@@ -83,7 +83,7 @@ module "ec2_ftps" {
   
   vpc_id                       = module.vpc.vpc_id
   subnet                       = module.dynamic_subnets.public_subnet_ids[0]
-  security_groups              = [module.ftps_server_sg.id, "sg-0ba034e982b090426"]
+  security_groups              = [module.ftps_server_sg.id, "sg-0cb9d3b0213eabd3c"] // remove hardcoded SG for initial deployment
   security_group_enabled       = false
   associate_public_ip_address  = true
   ami                          = var.ftps_server_ami
