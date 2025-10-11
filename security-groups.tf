@@ -2,6 +2,8 @@
 # WireGuard VPN
 #########################
 
+# test-sg-update test!
+
 module "wireguard_vpn_sg" {
   source = "cloudposse/security-group/aws"
   version = "2.2.0"
